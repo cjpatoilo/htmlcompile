@@ -2,8 +2,9 @@
 const fs = require('fs')
 const path = require('path')
 const gulp = require('gulp')
-const pug = require('gulp-pug')
 const ejs = require('gulp-ejs')
+const jade = require('gulp-jade')
+const pug = require('gulp-pug')
 
 function error (value) {
 	value = value || undefined
@@ -12,16 +13,13 @@ function error (value) {
 }
 
 function resolveInput (value) {
-	if (!value) error('Input not defined!')
-	if (path.parse(value).name === '*') value = path.dirname(path.parse(value).dir)
-	if (fs.lstatSync(value).isFile()) value = path.dirname(value)
-	if (fs.lstatSync(value).isDirectory()) {
-		let dirname = value
-		value = fs.readdirSync(value)
-			.filter(file => path.parse(file).ext === '.pug' || path.parse(file).ext === '.ejs')
-		value = value[0] ? path.resolve(dirname, `**/*${path.parse(value[0]).ext}`) : error('File not found!')
-	}
-	return path.resolve(value)
+	if (!fs.existsSync(value)) error('Input not exist.')
+	if (fs.lstatSync(value).isFile()) error('Input should be a folder.')
+	let dirname = value
+	value = fs
+		.readdirSync(value)
+		.filter(file => path.parse(file).ext === '.pug' || path.parse(file).ext === '.ejs' || path.parse(file).ext === '.jade')
+	return value[0] ? path.resolve(dirname, `**/*${path.parse(value[0]).ext}`) : error('File not found.')
 }
 
 function resolveOutput (input, output) {
@@ -42,6 +40,9 @@ function htmlcompile (input, output) {
 					break
 				case '.ejs':
 					compile = ejs
+					break
+				case '.jade':
+					compile = jade
 					break
 				default:
 					error('Input not supported.')

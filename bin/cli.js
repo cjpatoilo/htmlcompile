@@ -22,8 +22,8 @@ if (argv.indexOf('--help') !== -1 || argv.indexOf('-h') !== -1) {
 
   Examples:
 
-    $ htmlcompile src/index.pug dist/index.html
-`)
+    $ htmlcompile src dist
+	`)
 	process.exit(0)
 }
 
