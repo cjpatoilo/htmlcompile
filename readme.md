@@ -13,9 +13,9 @@
 
 ## Why it's awesome
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod autem provident at rerum adipisci saepe amet, quia hic quis obcaecati eos rem quidem, non omnis accusamus molestias, possimus corporis odio.
+No spend several hours setting configuration files. HTMLCompile will compile, optimize and compress anything to HTML. Set folder name where the source code is located and we'll take care of the rest for you. Just it!
 
-*NOTE: For now only works with Pug and EJS files.*
+*NOTE: For now only works with Jade/Pug and EJS files.*
 
 
 ## Getting Started
@@ -29,10 +29,10 @@ $ npm install htmlcompile
 **Usage**
 
 ```
-$ htmlcompile index.pug
+$ htmlcompile src dist
 ```
 
-*NOTE: If you only declare the folder name by default the `main.{pug,ejs}` file will be searched.*
+*NOTE: Only the folder name is required.*
 
 
 ## CLI
@@ -51,9 +51,9 @@ $ htmlcompile --help
 
   Examples:
 
-    $ htmlcompile src/index.pug dist/index.html
+    $ htmlcompile src
+    $ htmlcompile src dist
 ```
-
 
 
 ## Contributing
