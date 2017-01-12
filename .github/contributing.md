@@ -35,7 +35,7 @@ Try to solve a problem for each pull request, this increases the chances of acce
 
 Look at how the code is being maintained, we must always be consistent. We try to follow best practices as much as possible. In addition, here are some tips you should follow:
 
-**HTMLCompile** uses [ESLInt](http://eslint.org/), the pluggable linting utility for JavaScript.
+**HTMLCompile** uses [ESLint](http://eslint.org/), the pluggable linting utility for JavaScript.
 
 - No semicolons.
 - No unused variables.
