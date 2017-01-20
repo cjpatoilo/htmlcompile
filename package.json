@@ -20,6 +20,7 @@
 		"concat",
 		"ejs",
 		"framework",
+		"haml",
 		"handlebarsjs",
 		"hds",
 		"hogan",
@@ -48,6 +49,7 @@
 	"dependencies": {
 		"gulp": "^3.9.1",
 		"gulp-ejs": "^2.3.0",
+		"gulp-haml": "^0.1.6",
 		"gulp-handlebars": "^4.0.0",
 		"gulp-hogan": "^2.0.0",
 		"gulp-htmlmin": "^3.0.0",

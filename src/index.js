@@ -3,6 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const gulp = require('gulp')
 const ejs = require('gulp-ejs')
+const haml = require('gulp-haml')
 const hbs = require('gulp-handlebars')
 const hogan = require('gulp-hogan')
 const html = require('gulp-htmlmin')
@@ -21,7 +22,7 @@ function resolveInput (value) {
 	let dirname = value
 	value = fs
 		.readdirSync(value)
-		.filter(file => path.parse(file).ext === '.ejs' || path.parse(file).ext === '.hbs' || path.parse(file).ext === '.hogan' || path.parse(file).ext === '.html' || path.parse(file).ext === '.jade' || path.parse(file).ext === '.pug')
+		.filter(file => path.parse(file).ext === '.ejs' || path.parse(file).ext === '.haml' || path.parse(file).ext === '.hbs' || path.parse(file).ext === '.hogan' || path.parse(file).ext === '.html' || path.parse(file).ext === '.jade' || path.parse(file).ext === '.pug')
 	return value[0] ? path.resolve(dirname, `**/*${path.parse(value[0]).ext}`) : error('File not found.')
 }
 
@@ -40,6 +41,9 @@ function htmlcompile (input, output) {
 			switch (path.parse(input).ext) {
 				case '.ejs':
 					compile = ejs
+					break
+				case '.haml':
+					compile = haml
 					break
 				case '.hbs':
 					compile = hbs

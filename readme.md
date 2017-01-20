@@ -15,7 +15,7 @@
 
 No spend several hours setting configuration files. **HTMLCompile** will compile, optimize and compress anything to HTML. Set folder name where the source code is located and we'll take care of the rest for you. Just it!
 
-*NOTE: For now only works with Pug, Jade, EJS, Handlebars, Hogan and HTML.*
+*NOTE: For now only works with Pug, Jade, EJS, Haml, Handlebars, Hogan and HTML.*
 
 
 ## Getting Started
