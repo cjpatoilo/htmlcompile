@@ -22,6 +22,7 @@ if (argv.indexOf('--help') !== -1 || argv.indexOf('-h') !== -1) {
 
   Examples:
 
+    $ htmlcompile src
     $ htmlcompile src dist
 	`)
 	process.exit(0)

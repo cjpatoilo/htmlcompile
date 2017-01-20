@@ -3,6 +3,9 @@ const fs = require('fs')
 const path = require('path')
 const gulp = require('gulp')
 const ejs = require('gulp-ejs')
+const hbs = require('gulp-handlebars')
+const hogan = require('gulp-hogan')
+const html = require('gulp-htmlmin')
 const jade = require('gulp-jade')
 const pug = require('gulp-pug')
 
@@ -18,7 +21,7 @@ function resolveInput (value) {
 	let dirname = value
 	value = fs
 		.readdirSync(value)
-		.filter(file => path.parse(file).ext === '.pug' || path.parse(file).ext === '.ejs' || path.parse(file).ext === '.jade')
+		.filter(file => path.parse(file).ext === '.ejs' || path.parse(file).ext === '.hbs' || path.parse(file).ext === '.hogan' || path.parse(file).ext === '.html' || path.parse(file).ext === '.jade' || path.parse(file).ext === '.pug')
 	return value[0] ? path.resolve(dirname, `**/*${path.parse(value[0]).ext}`) : error('File not found.')
 }
 
@@ -35,14 +38,23 @@ function htmlcompile (input, output) {
 		try {
 			let compile
 			switch (path.parse(input).ext) {
-				case '.pug':
-					compile = pug
-					break
 				case '.ejs':
 					compile = ejs
 					break
+				case '.hbs':
+					compile = hbs
+					break
+				case '.hogan':
+					compile = hogan
+					break
+				case '.html':
+					compile = html
+					break
 				case '.jade':
 					compile = jade
+					break
+				case '.pug':
+					compile = pug
 					break
 				default:
 					error('Input not supported.')
