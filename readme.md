@@ -2,6 +2,7 @@
 
 > Compile, optimize and compress anything to HTML.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2b3d20fb1e2847bbbf7a1eaeebbae183)](https://www.codacy.com/app/cjpatoilo/htmlcompile?utm_source=github.com&utm_medium=referral&utm_content=cjpatoilo/htmlcompile&utm_campaign=badger)
 [![Travis Status](https://travis-ci.org/cjpatoilo/htmlcompile.svg?branch=master)](https://travis-ci.org/cjpatoilo/htmlcompile?branch=master)
 [![AppVeyor Status](https://ci.appveyor.com/api/projects/status/fit27aie1vb9fk9x?svg=true)](https://ci.appveyor.com/project/cjpatoilo/htmlcompile)
 [![Codacy Status](https://img.shields.io/codacy/grade/2b3d20fb1e2847bbbf7a1eaeebbae183/master.svg)](https://www.codacy.com/app/cjpatoilo/htmlcompile/dashboard)
