@@ -1,6 +1,6 @@
 {
   "name": "htmlcompile",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Compile, optimize and compress anything to HTML.",
   "homepage": "https://github.com/cjpatoilo/htmlcompile",
   "repository": "cjpatoilo/htmlcompile",
