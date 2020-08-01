@@ -1,16 +1,16 @@
 {
   "name": "htmlcompile",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Compile, optimize and compress anything to HTML.",
   "homepage": "https://github.com/cjpatoilo/htmlcompile",
   "repository": "cjpatoilo/htmlcompile",
   "license": "MIT",
   "author": "CJ Patoilo <cjpatoilo@gmail.com>",
-  "bin": "bin/cli.js",
-  "main": "src/index.js",
+  "bin": "cli.js",
+  "main": "index.js",
   "files": [
-    "bin/cli.js",
-    "src/index.js"
+    "cli.js",
+    "index.js"
   ],
   "keywords": [
     "automation",
