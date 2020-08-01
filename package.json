@@ -1,74 +1,81 @@
 {
-	"name": "htmlcompile",
-	"version": "0.3.0",
-	"description": "Compile, optimize and compress anything to HTML.",
-	"homepage": "https://github.com/cjpatoilo/htmlcompile",
-	"repository": "cjpatoilo/htmlcompile",
-	"license": "MIT",
-	"author": "CJ Patoilo <cjpatoilo@gmail.com>",
-	"bin": "bin/cli.js",
-	"main": "src/index.js",
-	"files": [
-		"bin/cli.js",
-		"src/index.js"
-	],
-	"keywords": [
-		"automation",
-		"cli",
-		"compile",
-		"compress",
-		"concat",
-		"ejs",
-		"framework",
-		"haml",
-		"handlebarsjs",
-		"hds",
-		"hogan",
-		"html",
-		"htmlmin",
-		"jade",
-		"minified",
-		"minify",
-		"npm",
-		"optimize",
-		"package",
-		"pug",
-		"render",
-		"template",
-		"templates",
-		"tool",
-		"tools"
-	],
-	"ignore": [
-		".appveyor.yml",
-		".editorconfig",
-		".github",
-		".gitignore",
-		".travis.yml"
-	],
-	"dependencies": {
-		"gulp": "^3.9.1",
-		"gulp-ejs": "^2.3.0",
-		"gulp-haml": "^0.1.6",
-		"gulp-handlebars": "^4.0.0",
-		"gulp-hogan": "^2.0.0",
-		"gulp-htmlmin": "^3.0.0",
-		"gulp-jade": "^1.1.0",
-		"gulp-pug": "^3.2.0"
-	},
-	"devDependencies": {
-		"ava": "^0.17.0",
-		"editorconfig-tools": "^0.1.1",
-		"eslint": "^3.12.1",
-		"eslint-config-styled": "^0.0.0",
-		"husky": "^0.12.0",
-		"nyc": "^10.0.0"
-	},
-	"engines": {
-		"node": ">=4"
-	},
-	"scripts": {
-		"precommit": "npm test",
-		"test": "nyc ava && eslint . -c styled --ignore-path .gitignore && editorconfig-tools check ."
-	}
+  "name": "htmlcompile",
+  "version": "0.3.0",
+  "description": "Compile, optimize and compress anything to HTML.",
+  "homepage": "https://github.com/cjpatoilo/htmlcompile",
+  "repository": "cjpatoilo/htmlcompile",
+  "license": "MIT",
+  "author": "CJ Patoilo <cjpatoilo@gmail.com>",
+  "bin": "bin/cli.js",
+  "main": "src/index.js",
+  "files": [
+    "bin/cli.js",
+    "src/index.js"
+  ],
+  "keywords": [
+    "automation",
+    "cli",
+    "compile",
+    "compress",
+    "concat",
+    "ejs",
+    "framework",
+    "haml",
+    "handlebarsjs",
+    "hds",
+    "hogan",
+    "html",
+    "htmlmin",
+    "jade",
+    "minified",
+    "minify",
+    "npm",
+    "optimize",
+    "package",
+    "pug",
+    "render",
+    "template",
+    "templates",
+    "tool",
+    "tools"
+  ],
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-ejs": "^5.1.0",
+    "gulp-haml": "^1.0.1",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-hogan": "^2.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-pug": "^4.0.1"
+  },
+  "devDependencies": {
+    "ava": "^3.11.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier-standard": "^16.4.1"
+  },
+  "scripts": {
+    "lint": "prettier-standard --check",
+    "test": "ava"
+  },
+  "engines": {
+    "node": "^12.18.0",
+    "npm": "^6.14.5"
+  },
+  "prettier": {
+    "jsxSingleQuote": false,
+    "trailingComma": "all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*": [
+      "prettier-standard --format",
+      "git add"
+    ]
+  }
 }
